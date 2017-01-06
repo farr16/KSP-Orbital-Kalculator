@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_calculator"
+        icon="@drawable/ic_calculator_black_24dp"
+        title="@string/calculator_tab_label" />
+    <tab
+        id="@+id/tab_phase"
+        icon="@drawable/ic_phase_black_24dp"
+        title="@string/phase_tab_label" />
+    <tab
+        id="@+id/tab_eject"
+        icon="@drawable/ic_eject_black_24dp"
+        title="@string/eject_tab_label" />
+</tabs>
