@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">KSP Orbital Kalculator</string>
+
+    <string name="calculator_tab_label">Calculator</string>
+    <string name="phase_tab_label">Phase Angle</string>
+    <string name="eject_tab_label">Eject Angle</string>
 </resources>
