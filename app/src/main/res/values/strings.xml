@@ -4,4 +4,10 @@
     <string name="calculator_tab_label">Calculator</string>
     <string name="phase_tab_label">Phase Angle</string>
     <string name="eject_tab_label">Eject Angle</string>
+
+    <!-- Test labels for testing fragment switching with the bottom bar. Remove after testing -->
+    <string name="calculator_label">Calculator Fragment</string>
+    <string name="phase_label">Phase Display Fragment</string>
+    <string name="eject_label">Eject Display Fragment</string>
+
 </resources>
