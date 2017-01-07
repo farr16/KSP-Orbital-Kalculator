@@ -6,8 +6,18 @@
     <string name="eject_tab_label">Eject Angle</string>
 
     <!-- Test labels for testing fragment switching with the bottom bar. Remove after testing -->
-    <string name="calculator_label">Calculator Fragment</string>
     <string name="phase_label">Phase Display Fragment</string>
     <string name="eject_label">Eject Display Fragment</string>
+
+    <string name="origin_label">Origin</string>
+    <string name="destination_label">Destination</string>
+    <string name="parking_orbit_label">Parking Orbit: </string>
+    <string name="km_label"> km above surface</string>
+    <string name="reset_button_label">Reset</string>
+    <string name="calculate_button_label">Calculate</string>
+    <string name="phase_angle_display_label">Phase Angle: </string>
+    <string name="ejection_angle_display_label">Ejection Angle: </string>
+    <string name="ejection_velocity_display_label">Ejection Velocity: </string>
+    <string name="ejection_burn_deltaV_display_label">Ejection burn Δv: </string>
 
 </resources>

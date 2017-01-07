@@ -8,11 +8,178 @@
     android:paddingBottom="@dimen/activity_vertical_margin">
 
     <TextView
-        android:text="@string/calculator_label"
+        android:id="@+id/OriginLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
+        android:layout_alignParentTop="true"
+        style="@android:style/TextAppearance.Small"
+        android:text="@string/origin_label" />
+
+    <Spinner
+        android:id="@+id/OriginSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OriginLabel"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/DestinationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OriginSelector"
+        style="@android:style/TextAppearance.Small"
+        android:text="@string/destination_label" />
+
+    <Spinner
+        android:id="@+id/DestinationSelector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DestinationLabel"
+        android:layout_centerHorizontal="true"/>
+
+    <LinearLayout
+        android:id="@+id/ParkingOrbitPanel"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/DestinationSelector"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/ParkingOrbitLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.Medium"
+            android:text="@string/parking_orbit_label" />
+
+        <EditText
+            android:id="@+id/ParkingOrbitEntry"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:maxLength="5" />
+
+        <TextView
+            android:id="@+id/KmLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@android:style/TextAppearance.Small"
+            android:text="@string/km_label" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/ResetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Space"
+        android:layout_toLeftOf="@+id/CalculateButton"
+        android:text="@string/reset_button_label" />
+
+    <Space
+        android:id="@+id/Space"
+        android:layout_width="@dimen/button_spacer_width"
+        android:layout_height="@dimen/button_spacer_height"
+        android:layout_below="@+id/ParkingOrbitPanel"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/CalculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Space"
+        android:layout_toRightOf="@id/Space"
+        android:text="@string/calculate_button_label"/>
+
+    <TextView
+        android:id="@+id/WarningMessageDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="34sp"
+        android:layout_below="@+id/Space"
         android:layout_centerHorizontal="true"
-        android:textSize="64sp"
-        android:id="@+id/textView" />
+        style="@android:style/TextAppearance.Small" />
+
+    <LinearLayout
+        android:id="@+id/LabelPanel"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/WarningMessageDisplay"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:gravity="end">
+
+        <TextView
+            android:id="@+id/PhaseAngleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"
+            android:text="@string/phase_angle_display_label"/>
+
+        <TextView
+            android:id="@+id/EjectionAngleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"
+            android:text="@string/ejection_angle_display_label"/>
+
+        <TextView
+            android:id="@+id/EjectionVelocityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"
+            android:text="@string/ejection_velocity_display_label"/>
+
+        <TextView
+            android:id="@+id/EjectionBurnDeltaVLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"
+            android:text="@string/ejection_burn_deltaV_display_label"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignTop="@+id/LabelPanel"
+        android:layout_toRightOf="@+id/LabelPanel"
+        android:layout_toEndOf="@+id/LabelPanel"
+        android:id="@+id/DisplayPanel">
+
+        <TextView
+            android:id="@+id/PhaseAngleDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"/>
+
+        <TextView
+            android:id="@+id/EjectionAngleDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"/>
+
+        <TextView
+            android:id="@+id/EjectionVelocityDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"/>
+
+        <TextView
+            android:id="@+id/EjectionBurnDeltaVDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            style="@android:style/TextAppearance.Medium"/>
+
+    </LinearLayout>
+
 </RelativeLayout>
