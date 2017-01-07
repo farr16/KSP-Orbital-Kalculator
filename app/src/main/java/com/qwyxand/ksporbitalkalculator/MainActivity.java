@@ -4,6 +4,7 @@ import android.support.annotation.IdRes;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 
 import com.qwyxand.ksporbitalkalculator.viewfragments.*;
 import com.roughike.bottombar.BottomBar;
@@ -73,5 +74,15 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
                 transaction.commit();
                 break;
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        // Don't respond to back button presses since back button navigation shouldn't be used with
+        // bottom bar tabs as per the Android Material Design Specification
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+            return true;
+        else
+            return super.onKeyDown(keyCode, event);
     }
 }
