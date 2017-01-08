@@ -1,6 +1,7 @@
 package com.qwyxand.ksporbitalkalculator;
 
 import android.support.annotation.IdRes;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,9 +20,10 @@ import com.roughike.bottombar.OnTabSelectListener;
  * Handles user input on the bottom bar to manage switching between the fragment interfaces.
  * Passes data between fragments and the orbital model.
  */
-public class MainActivity extends AppCompatActivity implements OnTabSelectListener {
+public class MainActivity extends AppCompatActivity implements OnTabSelectListener, MVC_Main.ControllerOps {
 
     private BottomBar bottomBar;
+    private MVC_Main.OrbitalModelOps model;
 
     private CalculatorFragment calculatorFragment;
     private PhaseDisplayFragment phaseDisplayFragment;
@@ -32,12 +34,13 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        model = new OrbitalModel(getApplicationContext());
+
         if (findViewById(R.id.fragment_container) != null) {
             if (savedInstanceState != null) {
                 return;
             }
 
-            //CalculatorFragment calculatorFragment = new CalculatorFragment();
             calculatorFragment = new CalculatorFragment();
 
             getSupportFragmentManager().beginTransaction()
@@ -46,6 +49,34 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
         bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(this);
+    }
+
+    public void calculateButtonPressed(int origIdx, int destIdx, int park) {
+        model.calculate(origIdx, destIdx, park);
+
+        if (model.isModelEmpty()) {
+            // TODO add error flags
+            return;
+        }
+
+        float phase = model.getPhaseAngle();
+        float eject = model.getEjectionAngle();
+        float ejectV = model.getEjectionVelocity();
+        float deltaV = model.getDeltaV();
+
+        calculatorFragment.updateCalculatorDisplays(phase, eject, ejectV, deltaV);
+    }
+
+    public void resetButtonPressed() {
+        model.resetModel();
+        Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.fragment_container);
+        if (fragment instanceof MVC_Main.ViewOps) {
+            ((MVC_Main.ViewOps) fragment).resetDisplay();
+        }
+    }
+
+    public String[] getBodyNamesList() {
+        return model.getBodyNamesList();
     }
 
     public void onTabSelected(@IdRes int tabId) {
