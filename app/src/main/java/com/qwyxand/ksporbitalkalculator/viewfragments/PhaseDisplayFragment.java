@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
+import com.qwyxand.ksporbitalkalculator.Body;
+import com.qwyxand.ksporbitalkalculator.MVC_Main;
 import com.qwyxand.ksporbitalkalculator.R;
 
 /**
@@ -18,11 +21,33 @@ import com.qwyxand.ksporbitalkalculator.R;
  * Displays two bodies, the origin and the destination, and the angle between them relative to the
  * orbital center.
  */
-public class PhaseDisplayFragment extends Fragment {
+public class PhaseDisplayFragment extends Fragment implements MVC_Main.ViewOps ,
+        MVC_Main.PhaseViewOps {
+
+    private String text = null;
+    private TextView phaseTextView;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View phaseView = inflater.inflate(R.layout.fragment_phase_display, container, false);
+
+        if (text == null)
+            text = getString(R.string.phase_label);
+
+        phaseTextView = (TextView) phaseView.findViewById(R.id.PhaseTestDisplay);
+        phaseTextView.setText(text);
+
         return phaseView;
+    }
+
+    @Override
+    public void resetDisplay() {
+        text = getString(R.string.phase_label);
+    }
+
+    @Override
+    public void updatePhaseDisplay(Body orig, Body dest, float phase) {
+        text = "Origin: " + orig.name + "\nDest: " + dest.name + "\nPhase: " + phase + "°";
     }
 }

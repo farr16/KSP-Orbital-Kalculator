@@ -14,5 +14,5 @@
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:textSize="64sp"
-        android:id="@+id/textView" />
+        android:id="@+id/PhaseTestDisplay" />
 </RelativeLayout>

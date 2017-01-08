@@ -28,8 +28,8 @@ import com.qwyxand.ksporbitalkalculator.R;
  * calculation.
  */
 
-public class CalculatorFragment extends Fragment implements
-        MVC_Main.ViewOps, MVC_Main.CalculatorViewOps, View.OnClickListener {
+public class CalculatorFragment extends Fragment implements MVC_Main.ViewOps,
+        MVC_Main.CalculatorViewOps, View.OnClickListener {
 
     private Spinner origin;
     private Spinner destination;

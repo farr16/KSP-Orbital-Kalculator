@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
                     .add(R.id.fragment_container, calculatorFragment).commit();
         }
 
+        phaseDisplayFragment = new PhaseDisplayFragment();
+        ejectDisplayFragment = new EjectDisplayFragment();
+
         bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(this);
     }
@@ -65,6 +68,14 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         float deltaV = model.getDeltaV();
 
         calculatorFragment.updateCalculatorDisplays(phase, eject, ejectV, deltaV);
+
+        if (phaseDisplayFragment == null)
+            phaseDisplayFragment = new PhaseDisplayFragment();
+        phaseDisplayFragment.updatePhaseDisplay(model.getOrigin(), model.getDestination(), phase);
+
+        if (ejectDisplayFragment == null)
+            ejectDisplayFragment = new EjectDisplayFragment();
+        ejectDisplayFragment.updateEjectDisplay(model.getOrigin(), eject);
     }
 
     public void resetButtonPressed() {
