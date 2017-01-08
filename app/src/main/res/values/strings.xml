@@ -9,6 +9,7 @@
     <string name="phase_label">Phase Display Fragment</string>
     <string name="eject_label">Eject Display Fragment</string>
 
+    <!-- Interface labels -->
     <string name="origin_label">Origin</string>
     <string name="destination_label">Destination</string>
     <string name="parking_orbit_label">Parking Orbit: </string>
@@ -19,5 +20,9 @@
     <string name="ejection_angle_display_label">Ejection Angle: </string>
     <string name="ejection_velocity_display_label">Ejection Velocity: </string>
     <string name="ejection_burn_deltaV_display_label">Ejection burn Δv: </string>
+
+    <!-- Warning message texts -->
+    <string name="planet_selection_warning">Please select separate origin and destination\n</string>
+    <string name="parking_orbit_input_warning">Please enter a positive integer for parking orbit</string>
 
 </resources>
