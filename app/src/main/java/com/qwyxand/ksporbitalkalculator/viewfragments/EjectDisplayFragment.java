@@ -24,7 +24,7 @@ public class EjectDisplayFragment extends Fragment implements MVC_Main.ViewOps ,
         MVC_Main.EjectViewOps {
 
     private Body origin = null;
-    private float ejectionAngle = Float.NEGATIVE_INFINITY;
+    private float ejectionAngle = Float.NaN;
     private boolean inner = false;
 
     private EjectDisplayCanvas ejectDisplayCanvas;

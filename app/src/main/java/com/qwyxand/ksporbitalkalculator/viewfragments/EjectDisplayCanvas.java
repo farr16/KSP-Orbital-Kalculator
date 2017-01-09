@@ -73,7 +73,7 @@ public class EjectDisplayCanvas extends View {
     protected void onDraw(Canvas canvas) {
 
         // If one of the values required to draw the view isn't set up, return without drawing
-        if (origin == null || ejectionAngle == Float.NEGATIVE_INFINITY) {
+        if (origin == null || ejectionAngle == Float.NaN) {
             canvas.drawText("Ejection angle has not been calculated", x, y, labelPaint);
             return;
         }
