@@ -69,13 +69,16 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
 
         calculatorFragment.updateCalculatorDisplays(phase, eject, ejectV, deltaV);
 
+        Body origin = model.getOrigin();
+        Body destination = model.getDestination();
+
         if (phaseDisplayFragment == null)
             phaseDisplayFragment = new PhaseDisplayFragment();
-        phaseDisplayFragment.updatePhaseDisplay(model.getOrigin(), model.getDestination(), phase);
+        phaseDisplayFragment.updatePhaseDisplay(origin, destination, phase);
 
         if (ejectDisplayFragment == null)
             ejectDisplayFragment = new EjectDisplayFragment();
-        ejectDisplayFragment.updateEjectDisplay(model.getOrigin(), eject);
+        ejectDisplayFragment.updateEjectDisplay(origin, eject, origin.sma < destination.sma);
     }
 
     public void resetButtonPressed() {

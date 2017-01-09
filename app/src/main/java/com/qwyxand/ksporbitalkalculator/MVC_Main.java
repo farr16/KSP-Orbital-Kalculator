@@ -34,7 +34,7 @@ public interface MVC_Main {
      * Defines functionality implemented by eject display fragment to be called by the main activity.
      */
     interface EjectViewOps {
-        void updateEjectDisplay(Body orig, float eject);
+        void updateEjectDisplay(Body orig, float eject, boolean inner);
     }
 
     /**
