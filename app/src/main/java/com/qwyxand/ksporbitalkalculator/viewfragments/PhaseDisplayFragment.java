@@ -24,30 +24,38 @@ import com.qwyxand.ksporbitalkalculator.R;
 public class PhaseDisplayFragment extends Fragment implements MVC_Main.ViewOps ,
         MVC_Main.PhaseViewOps {
 
-    private String text = null;
-    private TextView phaseTextView;
+    private Body origin = null;
+    private Body destination = null;
+    private float phaseAngle = Float.NaN;
+
+    private PhaseDisplayCanvas phaseDisplayCanvas;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View phaseView = inflater.inflate(R.layout.fragment_phase_display, container, false);
 
-        if (text == null)
-            text = getString(R.string.phase_label);
-
-        phaseTextView = (TextView) phaseView.findViewById(R.id.PhaseTestDisplay);
-        phaseTextView.setText(text);
+        phaseDisplayCanvas = (PhaseDisplayCanvas) phaseView.findViewById(R.id.PhaseAngleDisplayCanvas);
+        phaseDisplayCanvas.setOrigin(origin);
+        phaseDisplayCanvas.setDestination(destination);
+        phaseDisplayCanvas.setPhaseAngle(phaseAngle);
 
         return phaseView;
     }
 
     @Override
     public void resetDisplay() {
-        text = getString(R.string.phase_label);
     }
 
     @Override
     public void updatePhaseDisplay(Body orig, Body dest, float phase) {
-        text = "Origin: " + orig.name + "\nDest: " + dest.name + "\nPhase: " + phase + "°";
+        origin = orig;
+        destination = dest;
+        phaseAngle = phase;
+        if (phaseDisplayCanvas != null) {
+            phaseDisplayCanvas.setOrigin(origin);
+            phaseDisplayCanvas.setDestination(destination);
+            phaseDisplayCanvas.setPhaseAngle(phaseAngle);
+        }
     }
 }
