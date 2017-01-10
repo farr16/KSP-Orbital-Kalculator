@@ -44,10 +44,30 @@ public class PhaseDisplayFragment extends Fragment implements MVC_Main.ViewOps ,
     }
 
     @Override
+    /**
+     * resetDisplay
+     *
+     * Callback method used by MainActivity to refresh the display
+     */
     public void resetDisplay() {
+        origin = null;
+        destination = null;
+        phaseAngle = Float.NaN;
+
+        if (phaseDisplayCanvas != null) {
+            phaseDisplayCanvas.setOrigin(origin);
+            phaseDisplayCanvas.setDestination(destination);
+            phaseDisplayCanvas.setPhaseAngle(phaseAngle);
+            phaseDisplayCanvas.invalidate();
+        }
     }
 
     @Override
+    /**
+     * updateEjectDisplay
+     *
+     * Callback method used by MainActivity to pass information from the calculator model
+     */
     public void updatePhaseDisplay(Body orig, Body dest, float phase) {
         origin = orig;
         destination = dest;
