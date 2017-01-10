@@ -42,10 +42,29 @@ public class EjectDisplayFragment extends Fragment implements MVC_Main.ViewOps ,
     }
 
     @Override
+    /**
+     * resetDisplay
+     *
+     * Callback method used by MainActivity to refresh the display
+     */
     public void resetDisplay() {
+        origin = null;
+        ejectionAngle = Float.NaN;
+        inner = false;
+        if (ejectDisplayCanvas != null) {
+            ejectDisplayCanvas.setOrigin(origin);
+            ejectDisplayCanvas.setEjectionAngle(ejectionAngle);
+            ejectDisplayCanvas.setInner(inner);
+            ejectDisplayCanvas.invalidate();
+        }
     }
 
     @Override
+    /**
+     * updateEjectDisplay
+     *
+     * Callback method used by MainActivity to pass information from the calculator model
+     */
     public void updateEjectDisplay(Body orig, float eject, boolean in) {
         origin = orig;
         ejectionAngle = eject;

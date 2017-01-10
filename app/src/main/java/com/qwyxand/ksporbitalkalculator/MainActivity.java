@@ -87,6 +87,14 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         if (fragment instanceof MVC_Main.ViewOps) {
             ((MVC_Main.ViewOps) fragment).resetDisplay();
         }
+
+        if (phaseDisplayFragment == null)
+            phaseDisplayFragment = new PhaseDisplayFragment();
+        phaseDisplayFragment.resetDisplay();
+
+        if (ejectDisplayFragment == null)
+            ejectDisplayFragment = new EjectDisplayFragment();
+        ejectDisplayFragment.resetDisplay();
     }
 
     public String[] getBodyNamesList() {

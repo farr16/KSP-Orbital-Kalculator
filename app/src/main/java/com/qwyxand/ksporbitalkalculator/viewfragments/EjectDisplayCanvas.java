@@ -31,7 +31,7 @@ public class EjectDisplayCanvas extends View {
     private float y;
     private float x;
     private float minDim;
-    private float pathWidth, textSize;
+    private float pathWidth;
 
     private Paint orbitPaint;
     private Paint originPaint;
@@ -168,8 +168,8 @@ public class EjectDisplayCanvas extends View {
                 getResources().getDisplayMetrics());
         pathWidth = pixelAmount;
 
-        // Calculate text size so it appears the same size on different screen densities
-        textSize = getResources().getInteger(R.integer.text_size);
+        // Calculate the text size so it appears the same size on different screen densities
+        float textSize = getResources().getInteger(R.integer.text_size);
         pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, textSize,
                 getResources().getDisplayMetrics());
         textSize = pixelAmount;
