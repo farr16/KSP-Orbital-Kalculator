@@ -10,7 +10,7 @@
 
     <!-- Dimensions used on orbit display canvases -->
     <integer name="path_width">2</integer>
-    <integer name="planet_width">15</integer>
+    <integer name="body_radius">15</integer>
     <integer name="triangle_width">15</integer>
     <integer name="text_size">15</integer>
 </resources>
