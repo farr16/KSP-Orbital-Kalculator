@@ -22,7 +22,6 @@ import com.roughike.bottombar.OnTabSelectListener;
  */
 public class MainActivity extends AppCompatActivity implements OnTabSelectListener, MVC_Main.ControllerOps {
 
-    private BottomBar bottomBar;
     private MVC_Main.OrbitalModelOps model;
 
     private CalculatorFragment calculatorFragment;
@@ -50,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
         phaseDisplayFragment = new PhaseDisplayFragment();
         ejectDisplayFragment = new EjectDisplayFragment();
 
-        bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
         bottomBar.setOnTabSelectListener(this);
     }
 
@@ -133,9 +132,6 @@ public class MainActivity extends AppCompatActivity implements OnTabSelectListen
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // Don't respond to back button presses since back button navigation shouldn't be used with
         // bottom bar tabs as per the Android Material Design Specification
-        if (keyCode == KeyEvent.KEYCODE_BACK)
-            return true;
-        else
-            return super.onKeyDown(keyCode, event);
+        return (keyCode == KeyEvent.KEYCODE_BACK) || super.onKeyDown(keyCode, event);
     }
 }

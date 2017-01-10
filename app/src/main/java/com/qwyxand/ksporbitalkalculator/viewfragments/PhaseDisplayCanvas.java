@@ -14,9 +14,12 @@ import com.qwyxand.ksporbitalkalculator.Body;
 import com.qwyxand.ksporbitalkalculator.R;
 
 /**
+ * PhaseDisplayCanvas
  * Created by Matthew on 1/9/2017.
+ *
+ * Canvas which draws two bodies, the origin and the destination, and the angle between them
+ * relative to the orbital center.
  */
-
 public class PhaseDisplayCanvas extends View {
 
     private Body origin;
@@ -71,9 +74,8 @@ public class PhaseDisplayCanvas extends View {
         }
 
         float bodyRadius = getResources().getInteger(R.integer.body_radius);
-        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, bodyRadius,
+        bodyRadius = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, bodyRadius,
                 getResources().getDisplayMetrics());
-        bodyRadius = pixelAmount;
 
         float outerRad = minDim/2 - bodyRadius*2;
         float innerRad;

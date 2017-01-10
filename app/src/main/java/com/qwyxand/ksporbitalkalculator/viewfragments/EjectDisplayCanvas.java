@@ -31,7 +31,6 @@ public class EjectDisplayCanvas extends View {
     private float y;
     private float x;
     private float minDim;
-    private float pathWidth;
 
     private Paint orbitPaint;
     private Paint originPaint;
@@ -130,9 +129,8 @@ public class EjectDisplayCanvas extends View {
         // Calculate the size of the triangle so it appears the same size on different screen
         // densities
         float triSize = getResources().getInteger(R.integer.triangle_width);
-        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, triSize,
+        triSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, triSize,
                 getResources().getDisplayMetrics());
-        triSize = pixelAmount;
 
         float triCenX = (float) (x + Math.cos(Math.toRadians(ejectDisplayAngle)) * orbitRad);
         float triCenY = (float) (y +Math.sin(Math.toRadians(ejectDisplayAngle)) * orbitRad);
@@ -157,22 +155,20 @@ public class EjectDisplayCanvas extends View {
      * initPaints
      *
      * Helper method which initializes all the Paint objects used in canvas draw calls
-     * @param context
+     * @param context Context object passed in from constructor to allow getColor to work
      */
     private void initPaints(Context context) {
 
         // Calculate the width of the orbit path elements so they appear the same size on different
         // screen densities
-        pathWidth = getResources().getInteger(R.integer.path_width);
-        float pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pathWidth,
+        float pathWidth = getResources().getInteger(R.integer.path_width);
+        pathWidth = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, pathWidth,
                 getResources().getDisplayMetrics());
-        pathWidth = pixelAmount;
 
         // Calculate the text size so it appears the same size on different screen densities
         float textSize = getResources().getInteger(R.integer.text_size);
-        pixelAmount = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, textSize,
+        textSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, textSize,
                 getResources().getDisplayMetrics());
-        textSize = pixelAmount;
 
         orbitPaint = new Paint();
         orbitPaint.setAntiAlias(true);
