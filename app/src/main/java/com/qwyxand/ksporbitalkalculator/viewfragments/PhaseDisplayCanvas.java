@@ -129,9 +129,7 @@ public class PhaseDisplayCanvas extends View {
         canvas.drawCircle(destX, destY, bodyRadius, destinationPaint);
 
         // Draw text labels for the origin, parent, and destination bodies
-        // If origin is on the outer orbit, offset name tag slightly so it doesn't go off canvas
-        float offset = (origRad == outerRad) ? -bodyRadius*2 : 0;
-        canvas.drawText(origin.name, x+origRad+offset, y+bodyRadius*2, bodyLabelPaint);
+        canvas.drawText(origin.name, x+origRad, y+bodyRadius*2, bodyLabelPaint);
         canvas.drawText("Kerbol", x, y + bodyRadius*2, bodyLabelPaint);
         canvas.drawText(destination.name, destX, destY+bodyRadius*2, bodyLabelPaint);
 
