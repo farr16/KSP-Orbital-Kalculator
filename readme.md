@@ -24,6 +24,8 @@ The interface used for switching between the different interfaces of the applica
 
 ### Calculator View
 
+![Screenshot of the Calculator screen](/graphics/CalculatorKerbinToDuna.jpg?raw=true "Optional Title")
+
 The calculator screen is where the user inputs the orbital parameters to be used in calculating the orbital maneuver. The user selects an origin and a destination planet using the two spinners, then inputs a parking orbit height in the numeric text input field. If the user inputs the same planet for the origin and the destination, or doesn't input a positive integer for the parking orbit height, then an error message will appear in the center of the interface. If there were no errors in the user input, then after pressing the calculate button, the phase angle, ejection angle, ejection velocity, and required delta-V are listed in the text views at the bottom of the calculator screen. The other views will also be updated to dispay this information graphically. The reset button can be pressed to clear the text views and edit text field of any text, as well as resetting the other views.
 
 ### Phase Angle Display View
