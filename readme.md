@@ -20,6 +20,8 @@ A Hohmann transfer can be used to move from a lower orbit into a higher orbit, o
 
 ### Tabbed Interface
 
+<img src="/graphics/BottomBarTabs.png" width="720">
+
 The interface used for switching between the different interfaces of the application is a bottom navigation bar, as specified in Google's Material Design guidelines. The bar shows icons and labels for each of the app's three main screens. The current screen's icon and label are highlighted. Tapping on one of the other tab icons causes the application to switch to that screen. The bottom bar in this application was implemented using roughike's BottomBar library Version 2.0.
 
 ### Calculator View
