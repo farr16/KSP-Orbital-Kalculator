@@ -1,1 +1,0 @@
-This file is added to the repository in order to add the graphics folder to the branch
