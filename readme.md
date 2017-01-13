@@ -14,6 +14,8 @@ Kerbal Space Program is a management and space flight simulation gaming develope
 
 A Hohmann transfer orbit is a half elliptical orbit used to transfer a spacecraft from one circular orbit of a central body into a different circular orbit of the same body. A Hohmann transfer maneuver is an orbital maneuver which consists of two impulses. First, an impulse is used to change the spacecraft's circular orbit into an elliptical orbit which intersects with the desired orbit. Once the spacecraft travels along its Hohmann orbit to reach the intersection with the desired orbit, a second impulse is used to circularize the orbit.
 
+<img src="/graphics/HohmannTransferGraphic.png">
+
 A Hohmann transfer can be used to move from a lower orbit into a higher orbit, or vice-versa. A variation of the Hohmann transfer maneuver can be used to transfer between orbits of two bodies on different orbits around the same central body. The KSP Orbital Kalculator is designed to assist with this maneuver.
 
 ## The Application
