@@ -20,6 +20,8 @@ A Hohmann transfer can be used to move from a lower orbit into a higher orbit, o
 
 ### Tabbed Interface
 
+<img src="/graphics/BottomBarTabs.png" width="720">
+
 The interface used for switching between the different interfaces of the application is a bottom navigation bar, as specified in Google's Material Design guidelines. The bar shows icons and labels for each of the app's three main screens. The current screen's icon and label are highlighted. Tapping on one of the other tab icons causes the application to switch to that screen. The bottom bar in this application was implemented using roughike's BottomBar library Version 2.0.
 
 ### Calculator View
@@ -30,12 +32,12 @@ The calculator screen is where the user inputs the orbital parameters to be used
 
 ### Phase Angle Display View
 
-<img src="/graphics/PhaseKerbinToDuna.png" width="360"> <img src="/graphics/PhaseKerbinToEve.png" width="360">
+<img src="/graphics/PhaseKerbinToDuna.png" width="360"> <img src="/graphics/PhaseEelooToEve.png" width="360">
 
 The phase screen is where the user can see a graphical display of the phase angle; the between the destination and origin planets required to initiate the Hohmann transfer maneuver. When the application is first started up, or after the reset button is pressed, the phase screen will display a message saying there is no calculation data to display. When the phase view is selected after a calculation is performed, the screen will show a display of the selected origin and destination planets, and the angle between them. The origin planet will be located along the horizontal centerline of the screen, while the destination planet will be offset by the calculated phase angle. The display is drawn as though viewed from above the sun's north pole, such that the directions of the planets' orbits are counter clockwise. 
 
 ### Ejection Angle Display View
 
-<img src="/graphics/EjectKerbinToDuna.png" width="360"> <img src="/graphics/EjectKerbinToEve.png" width="360">
+<img src="/graphics/EjectKerbinToDuna.png" width="360"> <img src="/graphics/EjectEelooToEve.png" width="360">
 
 The eject screen is where the user can see a graphical display of the ejection angle; the angle along the spacecraft's orbit of the origin planet at which it performs the impulse used to carry the craft into the Hohmann transfer orbit. The origin planet is shown in the center of the screen. The spacecraft is represented by a grey triangle. An arrow indicates the direction of the spacecraft's orbit around the origin planet. The display is drawn as though viewed from above the origin planet's north pole, with the top side of the screen pointing in the direction of the planet's orbit around the sun and the bottom side of the screen pointing in the direction opposite the planet's orbit around the sun.
